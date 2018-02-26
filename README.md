@@ -6,11 +6,8 @@
 * Tomcat 8.5.*
 * MySql 5.6.*
 * VUE 2.9.*
-
-
-
-
-
+* IntelliJ IDEA
+* Spring-Boot 1.5.7
 
 
 
