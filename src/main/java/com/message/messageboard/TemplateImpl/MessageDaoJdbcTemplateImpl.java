@@ -14,7 +14,7 @@ public class MessageDaoJdbcTemplateImpl implements MessageDao {
     private NamedParameterJdbcTemplate jdbcTemplate;
 
     @Override
-    public Long insertArticle(Message message) {
+    public Long interfaceMessage(Message message) {
         String sql = "insert into tb_article(title,summary,user_id,create_time,public_time,update_time,status) " +
                 "values(:title,:summary,:userId,:createTime,:publicTime,:updateTime,:status)";
         Map<String, Object> param = new HashMap<>();
@@ -24,10 +24,5 @@ public class MessageDaoJdbcTemplateImpl implements MessageDao {
         param.put("message", message.getPublicTime());
         param.put("createTime", message.getCreateTime());
         return (long) jdbcTemplate.update(sql, param);
-    }
-
-    @Override
-    public Long interfaceMessage(Message message) {
-        return null;
     }
 }
