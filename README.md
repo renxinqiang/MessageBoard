@@ -3,11 +3,12 @@
 ### 环境配置
 
 * JAVA 8
-* Tomcat 8.5.*
 * MySql 5.6.*
 * VUE 2.9.*
 * IntelliJ IDEA
 * Spring-Boot 1.5.7
+* Crud数据库操作
+* Swagger2 API Description
 
 
 
