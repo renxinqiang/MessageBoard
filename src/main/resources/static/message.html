@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .list{
+
+            text-align: left;
+        }
+        .list ul{
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        .list li{
+            width: 100%; float:left;clear:left;
+        }
+        .list li a{
+            color: #777777;
+            display: block;
+            text-decoration:none;
+
+        }
+        .list li a:hover{
+            color: #336699;
+        }
+        b{margin-right:10px;}
+    </style>
+</head>
+<body>
+<ul class=list id="list">
+
+</ul>
+<script src="js/jquery-1.8.3.js"></script>
+<script>
+     $.getJSON('http://localhost:8000/getAll',{},function(data){
+         if(data){
+             var html = '';
+            for(var i in data){
+                html +=  "<li><b>"+ data[i].message +"</b> User:"+ data[i].user +"</li>";
+            }
+            $('#list').html(html);
+         } else {
+             alter('请求失败,请刷新页面');
+         }
+     });
+</script>
+</body>
+</html>

@@ -3,14 +3,18 @@ $('#submit').click(function(){
         email   = $('#email').val(),
         phone   = $('#phone').val(),
         message = $('#message').val();
-    var url = "http://localhost:8000/save",
+    var url = "http://localhost:8000/addMessage",
         data = {
             user    : user,
             email   : email,
             phone   : phone,
             message : message
         };
-    $.post(url,data,function(data){
-        console.log(data);
+    $.ajax({
+        url: url,
+        data: data,
+        success: function(msg){
+            window.location.href = "http://localhost:8000/message.html";
+        }
     });
 });
